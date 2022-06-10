@@ -22,31 +22,33 @@ export default function FormSurvey() {
           },
           {
             type: "panel",
-            name: "first_page_container_panel",
+            name: "unique_case_id_textbox",
             elements: [
               {
-                type: "text",
-                name: "unique_case_id_textbox",
-                startWithNewLine: false,
-                title: "Unique Case ID / Cluster Number (if applicable):",
-                inputType: "number",
-                hideNumber: true
-              },
-              {
                 type: "panel",
-                name: "current_status_panel",
+                name: "identity",
+                title: "Identidy".toLocaleUpperCase(),
+                showNumber: true,
                 elements: [
                   {
+                    type: "text",
+                    name: "age",
+                    startWithNewLine: false,
+                    title: "Age",
+                    inputType: "number",
+                    hideNumber: true,
+                    isRequired: true
+                  },
+                  {
                     type: "boolean",
-                    name: "current_status",
+                    name: "identity",
                     titleLocation: "hidden",
-                    labelTrue: "Alive",
-                    labelFalse: "Dead",
-                    hideNumber: true
+                    labelTrue: "Mr.",
+                    labelFalse: "Mrs.",
+                    hideNumber: true,
+                    isRequired: true
                   }
-                ],
-                title: "Current Status",
-                showNumber: true
+                ]
               },
               {
                 type: "panel",
@@ -91,8 +93,8 @@ export default function FormSurvey() {
       },
       {
         name: "page2",
-        navigationTitle: "Collector",
-        navigationDescription: "Collector's info",
+        navigationTitle: "Collector2",
+        navigationDescription: "Collector's info2",
         elements: [
           {
             type: "rating",
@@ -107,59 +109,7 @@ export default function FormSurvey() {
           },
           {
             type: "checkbox",
-            name: "promoter_features",
-            visible: false,
-            visibleIf: "{nps_score} >= 9",
-            title: "Which features do you value the most?",
-            isRequired: true,
-            validators: [
-              {
-                type: "answercount",
-                text: "Please select two features maximum.",
-                maxCount: 2
-              }
-            ],
-            choices: [
-              "Performance",
-              "Stability",
-              "User Interface",
-              "Complete Functionality"
-            ],
-            hasOther: true,
-            otherText: "Other feature:",
-            colCount: 2
-          },
-          {
-            type: "comment",
-            name: "passive_experience",
-            visible: false,
-            visibleIf: "{nps_score} > 6  and {nps_score} < 9",
-            title: "What do you like about our product?"
-          },
-          {
-            type: "comment",
-            name: "disappointed_experience",
-            visible: false,
-            visibleIf: "{nps_score} notempty",
-            title:
-              "What do you miss or find disappointing in your experience with our products?"
-          }
-        ],
-        elements: [
-          {
-            type: "rating",
-            name: "nps_score",
-            title:
-              "On a scale of zero to ten, how likely are you to recommend our product to a friend or colleague?",
-            isRequired: true,
-            rateMin: 0,
-            rateMax: 10,
-            minRateDescription: "(Most unlikely)",
-            maxRateDescription: "(Most likely)"
-          },
-          {
-            type: "checkbox",
-            name: "promoter_features",
+            name: "promoter_features2",
             visible: false,
             visibleIf: "{nps_score} >= 9",
             title: "Which features do you value the most?",

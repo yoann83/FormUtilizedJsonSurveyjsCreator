@@ -1,3 +1,8 @@
+$blue_egerie: #274058;
+$orange_egerie: #e94e1b;
+$white_egerie: #fff;
+$success_egerie: #198754;
+$error_egerie: #FFBABB;
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -13,8 +18,72 @@ div {
     }
   }
 }
-.sv-root-modern .sv_progress-buttons__list li{
-  &:before{
-    background-color: red;
+.list {
+  background-color: $blue_egerie;
 }
+form {
+  .sv-container-modern{
+    ul{
+      li{
+        &:before{
+          border-color: #274058 !important;
+          background-color: $blue_egerie !important;
+        }
+        &:after{
+          background-color: $blue_egerie !important;;
+        }
+      }
+      li.sv_progress-buttons__list-element--current{
+        &:before{
+          background-color: $orange_egerie !important;;
+        }
+      }
+    }
+    .sv-question {
+      h5{
+        background-color: $white_egerie !important;
+        span{
+          color: $blue_egerie;
+          cursor: pointer;
+        }
+      }
+    }
+    .sv-rating__item-text{
+      border-radius: 50%;
+      border-color: $blue_egerie !important;
+      background-color: $blue_egerie !important;
+    }
+    .sv-rating__item--selected{
+      span{
+        border-color: $orange_egerie !important;
+        background-color: $orange_egerie !important;
+      }
+    }
+  }
+}
+
+.sv-question__content{
+  input{
+    &:focus{
+      border-bottom: 1px solid $blue_egerie !important;
+    }
+  }
+}
+.sv-root-modern {
+  .sv-checkbox--checked {
+    .sv-checkbox__svg{
+      background-color: $orange_egerie !important;
+    }
+    &:focus{
+      border: none;
+    }
+  }
+  .sv-comment{
+    &:focus{
+      border-color: $blue_egerie !important;
+    }
+  }
+  .sv-boolean__switch, .sv-btn--navigation{
+    background-color: $orange_egerie !important;
+  }
 }
