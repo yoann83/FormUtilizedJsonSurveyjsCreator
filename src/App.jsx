@@ -1,5 +1,5 @@
 import FormSurveyContainer from "./container/FormSurvey";
-import "./styles.css";
+import "./styles.scss";
 
 export default function App() {
   return <FormSurveyContainer />;

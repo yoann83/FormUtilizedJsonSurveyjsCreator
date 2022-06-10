@@ -1,0 +1,20 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+div {
+  &[data-name="first_page_image"] {
+    text-align: center;
+    img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 50vw;
+    }
+  }
+}
+.sv-root-modern .sv_progress-buttons__list li{
+  &:before{
+    background-color: red;
+}
+}
