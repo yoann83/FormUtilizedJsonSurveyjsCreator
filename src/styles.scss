@@ -1,8 +1,9 @@
-$blue_egerie: #274058;
-$orange_egerie: #e94e1b;
-$white_egerie: #fff;
-$success_egerie: #198754;
-$error_egerie: #FFBABB;
+$blue_egerie: #274058 !important;
+$orange_egerie: #e94e1b !important;
+$white_egerie: #fff !important;
+$success_egerie: #198754 !important;
+$error_egerie: #FFBABB !important;
+$field_egerie : #f5f5f5 !important;
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -26,37 +27,54 @@ form {
     ul{
       li{
         &:before{
-          border-color: #274058 !important;
-          background-color: $blue_egerie !important;
+          border-color: $blue_egerie;
+          background-color: $blue_egerie;
         }
         &:after{
-          background-color: $blue_egerie !important;;
+          background-color: $blue_egerie;;
         }
       }
       li.sv_progress-buttons__list-element--current{
         &:before{
-          background-color: $orange_egerie !important;;
+          background-color: $orange_egerie;;
         }
       }
     }
     .sv-question {
       h5{
-        background-color: $white_egerie !important;
+        background-color: $white_egerie;
         span{
           color: $blue_egerie;
           cursor: pointer;
         }
       }
     }
+    .sv-selectbase{
+      display: flex;
+      justify-content: center;
+      .sv-comment{
+        min-width: 25vw;
+        max-width: 50vw;
+        min-height: 10vh;
+        max-height: 30vh;
+        border-radius: 0.3em;
+      }
+    }
+
+    .sv-rating{
+      [role=radiogroup]{
+        text-align: center;
+      }
+    }
     .sv-rating__item-text{
       border-radius: 50%;
-      border-color: $blue_egerie !important;
-      background-color: $blue_egerie !important;
+      border-color: $blue_egerie;
+      background-color: $blue_egerie;
     }
     .sv-rating__item--selected{
       span{
-        border-color: $orange_egerie !important;
-        background-color: $orange_egerie !important;
+        border-color: $orange_egerie;
+        background-color: $orange_egerie;
       }
     }
   }
@@ -64,15 +82,21 @@ form {
 
 .sv-question__content{
   input{
+    background-color: $field_egerie;
+    border-radius: 0.3em;
     &:focus{
-      border-bottom: 1px solid $blue_egerie !important;
+      border-bottom: 1px solid $blue_egerie;
+    }
+    &::placeholder {
+      opacity: 0.5;
+      font-style: italic;
     }
   }
 }
 .sv-root-modern {
   .sv-checkbox--checked {
     .sv-checkbox__svg{
-      background-color: $orange_egerie !important;
+      background-color: $orange_egerie;
     }
     &:focus{
       border: none;
@@ -80,10 +104,10 @@ form {
   }
   .sv-comment{
     &:focus{
-      border-color: $blue_egerie !important;
+      border-color: $blue_egerie;
     }
   }
   .sv-boolean__switch, .sv-btn--navigation{
-    background-color: $orange_egerie !important;
+    background-color: $orange_egerie;
   }
 }

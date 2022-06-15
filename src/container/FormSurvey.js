@@ -31,13 +31,15 @@ export default function FormSurvey() {
                 showNumber: true,
                 elements: [
                   {
+                    hideNumber: true,
+                    isRequired: true,
+                    inputType: "number",
                     type: "text",
                     name: "age",
                     startWithNewLine: false,
                     title: "Age",
-                    inputType: "number",
-                    hideNumber: true,
-                    isRequired: true
+                    description: "Are you an adult ?",
+                    placeHolder: "18"
                   },
                   {
                     type: "boolean",
@@ -45,6 +47,7 @@ export default function FormSurvey() {
                     titleLocation: "hidden",
                     labelTrue: "Mr.",
                     labelFalse: "Mrs.",
+                    indent: 3,
                     hideNumber: true,
                     isRequired: true
                   }
@@ -57,24 +60,28 @@ export default function FormSurvey() {
                   {
                     type: "text",
                     name: "name_of_data_collector",
-                    title: "Name of data collector"
+                    title: "Name of data collector",
+                    placeHolder: "Symfony"
                   },
                   {
                     type: "text",
                     name: "data_collector_institution",
-                    title: "Data collector Institution"
+                    title: "Data collector Institution",
+                    placeHolder: "Egerie"
                   },
                   {
                     type: "text",
-                    name: "data_collector_telephone_number",
-                    title: "Data collector telephone number",
+                    name: "telephone_number",
+                    title: "Telephone number",
                     inputType: "tel"
                   },
                   {
                     type: "text",
                     name: "email",
                     title: "Email",
-                    inputType: "email"
+                    isRequired: true,
+                    inputType: "email",
+                    placeHolder: "bond.james@007.fr"
                   },
                   {
                     type: "text",
@@ -100,12 +107,10 @@ export default function FormSurvey() {
             type: "rating",
             name: "nps_score",
             title:
-              "On a scale of zero to ten, how likely are you to recommend our product to a friend or colleague?",
+              "On a scale of zero to ten, how likely are you to recommend our compagny to a friend or colleague ?",
             isRequired: true,
             rateMin: 0,
-            rateMax: 10,
-            minRateDescription: "(Most unlikely)",
-            maxRateDescription: "(Most likely)"
+            rateMax: 10
           },
           {
             type: "checkbox",
