@@ -36,7 +36,7 @@ form {
       }
       li.sv_progress-buttons__list-element--current{
         &:before{
-          background-color: $orange_egerie;;
+          background-color: $orange_egerie;
         }
       }
     }
@@ -108,6 +108,25 @@ form {
     }
   }
   .sv-boolean__switch, .sv-btn--navigation{
+    background-color: $blue_egerie;
+    &:hover{
+      background-color: $orange_egerie;
+    }
+  }
+}
+.sv-checkbox__svg{
+  border-color : $blue_egerie;
+  &:hover{
     background-color: $orange_egerie;
   }
+}
+.sv-checkbox{
+  &:hover{
+    .sv-checkbox__svg{
+      background-color: $orange_egerie;
+    }
+  }
+}
+.sv-item__control-label{
+  color: $blue_egerie;
 }
