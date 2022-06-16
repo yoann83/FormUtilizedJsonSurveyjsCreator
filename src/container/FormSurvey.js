@@ -159,14 +159,14 @@ export default function FormSurvey() {
   };
 
   const survey = new Model(surveyJson);
-  survey.focusFirstQuestionAutomatic = false;
+  survey.focusFirstQuestionAutomatic = true;
 
-  const alertResults = useCallback((sender) => {
+  const formCompleted = useCallback((sender) => {
     const results = JSON.stringify(sender.data);
     alert(results);
   }, []);
 
-  survey.onComplete.add(alertResults);
+  survey.onComplete.add(formCompleted);
 
   return <Survey model={survey} />;
 }
