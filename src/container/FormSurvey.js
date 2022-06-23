@@ -175,7 +175,7 @@ export default function FormSurvey() {
   survey.onComplete.add(formCompleted);
 
   return (
-    <div>
+    <div id="form_survey">
       <h1>{title.toLocaleUpperCase()}</h1>
       <Survey model={survey} />;
     </div>
