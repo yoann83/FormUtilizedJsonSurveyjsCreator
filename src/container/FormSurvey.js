@@ -1,18 +1,18 @@
 import { useCallback } from "react";
 import "survey-core/modern.min.css";
-// import 'survey-core/survey.min.css';
 import { StylesManager, Model } from "survey-core";
 import { Survey } from "survey-react-ui";
 
 export default function FormSurvey() {
+  const title = "Form SurveyJs";
   StylesManager.applyTheme("modern");
 
   const surveyJson = {
     pages: [
       {
         name: "page1",
-        navigationTitle: "Collector",
-        navigationDescription: "Collector's info",
+        navigationTitle: "Part 1",
+        navigationDescription: "Identity",
         elements: [
           {
             type: "image",
@@ -100,9 +100,15 @@ export default function FormSurvey() {
       },
       {
         name: "page2",
-        navigationTitle: "Collector2",
-        navigationDescription: "Collector's info2",
+        navigationTitle: "Part 2",
+        navigationDescription: "Opinion",
         elements: [
+          {
+            type: "image",
+            name: "first_page_image",
+            imageLink:
+              "https://egerie-software.com/wp-content/themes/egerie/img/egerie-logo.svg"
+          },
           {
             type: "rating",
             name: "nps_score",
@@ -168,5 +174,10 @@ export default function FormSurvey() {
 
   survey.onComplete.add(formCompleted);
 
-  return <Survey model={survey} />;
+  return (
+    <div>
+      <h1>{title.toLocaleUpperCase()}</h1>
+      <Survey model={survey} />;
+    </div>
+  );
 }
